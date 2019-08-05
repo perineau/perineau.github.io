@@ -1,0 +1,136 @@
+$page : #f0f0f0;
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    background-image: url("./../images/fond.jpg");
+}
+
+.page{
+    position: relative;
+    background-color: $page;
+    padding: 50px;
+    min-height: 100vh;
+    margin: 0% 10%;
+    margin-bottom: 50px;
+
+    h1{
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        margin-bottom: 50px;
+        transform: translateX(-50%);
+    }
+
+}
+
+.dernier{
+    margin-bottom: 0px;
+}
+
+/*----------------------side bare -------------------------*/
+
+.font{
+    font-family: 'icomoon';
+}
+
+.nav{
+    $font : #aaa;
+    display: inline-block;
+    position: fixed;
+    z-index: 1000;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    .decaler{
+
+        position: relative;
+        left: -100%;
+        transition: left 1s;
+        background-color: $font;
+
+        // animation: arriver 1s linear;
+
+        .font{
+            font-weight: normal;
+            vertical-align: middle;
+            text-align: center;
+            display: inline-block;
+            font-size: 40px;
+            background-color: $font;
+            border-radius: 50%;
+            padding: 17px;
+        }
+
+        .parent{
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 100%;
+            padding: 0px;
+            padding-left: 10px;
+        }
+
+        div{
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .actuel{
+            background-color: darken($font, 10%);
+        }
+
+        &:hover{
+            left: 0px;
+        }
+    }
+
+}
+
+/*---------------------------projet--------------------------*/
+
+.projet{
+    display: flex;
+    justify-content: space-between;
+    .images{
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin: 30px;
+    }
+}
+
+.barre{
+    margin-top: 10px;
+    height: 10px;
+    background: linear-gradient(to right,orange,green);
+    div {
+        float: right;
+        background-color: $page;
+        height: 100%;
+    }
+}
+
+.succes{
+    display: inline-block;
+    background-color: #36b636;
+    padding: 10px;
+    border-radius: 10px;
+    color: $page;
+    font-weight: bold;
+}
+
+.erreur{
+    @extend .succes;
+    background-color: #d42929;
+}
+
+textarea{
+    width: 100%;
+    height: 200px;
+}
